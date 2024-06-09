@@ -11,7 +11,15 @@ import SwiftUI
 struct SummerCampApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppView()
         }
+    }
+}
+
+struct AppView: View {
+    var body: some View {
+        ContentView()
+            .environment(CampStore.shared)
+            .modelContext(CampStore.shared.mainContext)
     }
 }

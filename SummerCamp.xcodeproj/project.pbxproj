@@ -11,6 +11,10 @@
 		96D200692C14B59F001B4B56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D200682C14B59F001B4B56 /* ContentView.swift */; };
 		96D2006B2C14B5A0001B4B56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96D2006A2C14B5A0001B4B56 /* Assets.xcassets */; };
 		96D2006E2C14B5A0001B4B56 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96D2006D2C14B5A0001B4B56 /* Preview Assets.xcassets */; };
+		96D200752C15414B001B4B56 /* CampStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D200742C15414B001B4B56 /* CampStore.swift */; };
+		96D200772C154192001B4B56 /* SDScheduleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D200762C154192001B4B56 /* SDScheduleItem.swift */; };
+		96D2007B2C15495C001B4B56 /* SDActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D2007A2C15495C001B4B56 /* SDActivity.swift */; };
+		96D2007D2C164D10001B4B56 /* ActivityParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D2007C2C164D10001B4B56 /* ActivityParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,12 @@
 		96D200682C14B59F001B4B56 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		96D2006A2C14B5A0001B4B56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96D2006D2C14B5A0001B4B56 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		96D200742C15414B001B4B56 /* CampStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampStore.swift; sourceTree = "<group>"; };
+		96D200762C154192001B4B56 /* SDScheduleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDScheduleItem.swift; sourceTree = "<group>"; };
+		96D200782C154289001B4B56 /* SummerCamp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SummerCamp.entitlements; sourceTree = "<group>"; };
+		96D200792C1542F7001B4B56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		96D2007A2C15495C001B4B56 /* SDActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDActivity.swift; sourceTree = "<group>"; };
+		96D2007C2C164D10001B4B56 /* ActivityParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +61,14 @@
 		96D200652C14B59F001B4B56 /* SummerCamp */ = {
 			isa = PBXGroup;
 			children = (
+				96D200792C1542F7001B4B56 /* Info.plist */,
+				96D200782C154289001B4B56 /* SummerCamp.entitlements */,
 				96D200662C14B59F001B4B56 /* SummerCampApp.swift */,
 				96D200682C14B59F001B4B56 /* ContentView.swift */,
+				96D200742C15414B001B4B56 /* CampStore.swift */,
+				96D200762C154192001B4B56 /* SDScheduleItem.swift */,
+				96D2007A2C15495C001B4B56 /* SDActivity.swift */,
+				96D2007C2C164D10001B4B56 /* ActivityParser.swift */,
 				96D2006A2C14B5A0001B4B56 /* Assets.xcassets */,
 				96D2006C2C14B5A0001B4B56 /* Preview Content */,
 			);
@@ -137,8 +153,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96D2007B2C15495C001B4B56 /* SDActivity.swift in Sources */,
 				96D200692C14B59F001B4B56 /* ContentView.swift in Sources */,
 				96D200672C14B59F001B4B56 /* SummerCampApp.swift in Sources */,
+				96D200752C15414B001B4B56 /* CampStore.swift in Sources */,
+				96D200772C154192001B4B56 /* SDScheduleItem.swift in Sources */,
+				96D2007D2C164D10001B4B56 /* ActivityParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,12 +289,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SummerCamp/SummerCamp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SummerCamp/Preview Content\"";
 				DEVELOPMENT_TEAM = 2GPQ8GE99T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SummerCamp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -298,12 +320,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SummerCamp/SummerCamp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SummerCamp/Preview Content\"";
 				DEVELOPMENT_TEAM = 2GPQ8GE99T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SummerCamp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
