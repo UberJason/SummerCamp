@@ -9,15 +9,10 @@ import SwiftUI
 
 @Observable
 class ViewModel {
+    let items: [ScheduleItem]
+    
     init() {
-        let encoder = JSONEncoder()
-        encoder.dateEncodingStrategy = .formatted({
-            let f = DateFormatter()
-            f.dateFormat = "yyyy-MM-dd"
-            return f
-        }())
-        
-        _ = ActivitiesParser().parse(from: activities)
+        items = ActivitiesParser().parse(from: activities)
     }
 }
 
@@ -25,38 +20,20 @@ struct ContentView: View {
     @State var viewModel = ViewModel()
     
     var body: some View {
-        NavigationStack {
-            List {
-                Section {
-                    Text("Swim clothes")
-                } header: {
-                    Text("Pack List")
-                        .sectionHeaderStyle()
+        TabView {
+            DayView()
+                .tabItem {
+                    Label("Today", systemImage: "\(Date().formatted(.dateTime.day())).square")
                 }
-                
-                
-                Section {
-                    Text("Swimming Field Trip")
-                    Text("Ninja Beam Challenge")
-                } header: {
-                    Text("Activities")
-                        .sectionHeaderStyle()
+            
+            ScheduleView()
+                .tabItem {
+                    Label("Schedule", systemImage: "calendar")
                 }
-            }
-            .navigationTitle("Monday, June 17")
         }
     }
 }
 
 #Preview {
     ContentView()
-}
-
-public extension View {
-    func sectionHeaderStyle() -> some View {
-        self
-            .textCase(nil)
-            .headerProminence(.increased)
-            .padding([.leading, .trailing], -18)
-    }
 }

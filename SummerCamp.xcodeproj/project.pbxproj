@@ -15,6 +15,9 @@
 		96D200772C154192001B4B56 /* SDScheduleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D200762C154192001B4B56 /* SDScheduleItem.swift */; };
 		96D2007B2C15495C001B4B56 /* SDActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D2007A2C15495C001B4B56 /* SDActivity.swift */; };
 		96D2007D2C164D10001B4B56 /* ActivityParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D2007C2C164D10001B4B56 /* ActivityParser.swift */; };
+		96D2007F2C1660A0001B4B56 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D2007E2C1660A0001B4B56 /* DayView.swift */; };
+		96D200812C1660BD001B4B56 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D200802C1660BD001B4B56 /* ScheduleView.swift */; };
+		96D200832C1660D2001B4B56 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D200822C1660D2001B4B56 /* View+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		96D200792C1542F7001B4B56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		96D2007A2C15495C001B4B56 /* SDActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDActivity.swift; sourceTree = "<group>"; };
 		96D2007C2C164D10001B4B56 /* ActivityParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityParser.swift; sourceTree = "<group>"; };
+		96D2007E2C1660A0001B4B56 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		96D200802C1660BD001B4B56 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		96D200822C1660D2001B4B56 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,9 @@
 				96D200782C154289001B4B56 /* SummerCamp.entitlements */,
 				96D200662C14B59F001B4B56 /* SummerCampApp.swift */,
 				96D200682C14B59F001B4B56 /* ContentView.swift */,
+				96D2007E2C1660A0001B4B56 /* DayView.swift */,
+				96D200802C1660BD001B4B56 /* ScheduleView.swift */,
+				96D200822C1660D2001B4B56 /* View+Extensions.swift */,
 				96D200742C15414B001B4B56 /* CampStore.swift */,
 				96D200762C154192001B4B56 /* SDScheduleItem.swift */,
 				96D2007A2C15495C001B4B56 /* SDActivity.swift */,
@@ -153,10 +162,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96D2007F2C1660A0001B4B56 /* DayView.swift in Sources */,
+				96D200832C1660D2001B4B56 /* View+Extensions.swift in Sources */,
 				96D2007B2C15495C001B4B56 /* SDActivity.swift in Sources */,
 				96D200692C14B59F001B4B56 /* ContentView.swift in Sources */,
 				96D200672C14B59F001B4B56 /* SummerCampApp.swift in Sources */,
 				96D200752C15414B001B4B56 /* CampStore.swift in Sources */,
+				96D200812C1660BD001B4B56 /* ScheduleView.swift in Sources */,
 				96D200772C154192001B4B56 /* SDScheduleItem.swift in Sources */,
 				96D2007D2C164D10001B4B56 /* ActivityParser.swift in Sources */,
 			);
