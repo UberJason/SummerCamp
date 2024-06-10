@@ -20,8 +20,6 @@ class ActivitiesParser {
         }
         activityGroups.append(currentGroup)
         
-        print(activityGroups)
-        
         let items = activityGroups.map { group in
             ScheduleItem(
                 date: dateFormatter.date(from: group.first!)!,
