@@ -13,6 +13,31 @@ class SDActivity {
     }
 }
 
+enum ActivityType: Hashable, Codable {
+    case pool, steam, team, partDayFieldTrip, fullDayFieldTrip, film, other(title: String), closed
+    
+    var title: String {
+        switch self {
+        case .pool:
+            "Swimming Field Trip"
+        case .steam:
+            "STEAM Activity"
+        case .team:
+            "Team Activity"
+        case .partDayFieldTrip:
+            "Field Trip"
+        case .fullDayFieldTrip:
+            "Full Day Field Trip"
+        case .film:
+            "Friday Film Event"
+        case .other(let title):
+            title
+        case .closed:
+            "RCC CLOSED"
+        }
+    }
+}
+
 struct Activity: Codable {
     public var activityType: ActivityType
     public var activityDescription: String?

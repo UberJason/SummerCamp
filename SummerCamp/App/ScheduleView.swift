@@ -25,7 +25,7 @@ struct ActivityCell: View {
     let activity: Activity
     
     var body: some View {
-        HStack(alignment: .top, spacing: 16.0) {
+        HStack(alignment: .center, spacing: 16.0) {
             activity.activityType.image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -36,7 +36,6 @@ struct ActivityCell: View {
                         RoundedRectangle(cornerRadius: 8)
                             .fill(activity.activityType.imageColor)
                     )
-                .offset(y: 6)
             
             VStack(alignment: .leading) {
                 Text(activity.activityType.title).font(.headline)

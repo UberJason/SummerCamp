@@ -8,4 +8,9 @@ public extension Image {
     static let team = Image(systemName: "person.3")
     static let closed = Image(systemName: "exclamationmark.triangle.fill")
     static let otherActivity = Image(systemName: "paperplane")
+    static let towel = Image(systemName: "water.waves")
+    static let shoes = Image(systemName: "shoe.2")
+    static let goggles = Image(systemName: "eyeglasses")
+    static let backpack = Image(systemName: "backpack")
+    static let bag = Image(systemName: "bag")
 }

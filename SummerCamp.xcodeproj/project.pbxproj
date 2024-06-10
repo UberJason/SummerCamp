@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		968391972C166B580026AFAE /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968391962C166B580026AFAE /* Image+Extensions.swift */; };
+		968391992C178DD70026AFAE /* PackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968391982C178DD70026AFAE /* PackItem.swift */; };
 		96D200672C14B59F001B4B56 /* SummerCampApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D200662C14B59F001B4B56 /* SummerCampApp.swift */; };
 		96D200692C14B59F001B4B56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D200682C14B59F001B4B56 /* ContentView.swift */; };
 		96D2006B2C14B5A0001B4B56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96D2006A2C14B5A0001B4B56 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		968391962C166B580026AFAE /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
+		968391982C178DD70026AFAE /* PackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackItem.swift; sourceTree = "<group>"; };
 		96D200632C14B59F001B4B56 /* SummerCamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SummerCamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D200662C14B59F001B4B56 /* SummerCampApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummerCampApp.swift; sourceTree = "<group>"; };
 		96D200682C14B59F001B4B56 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				96D2006A2C14B5A0001B4B56 /* Assets.xcassets */,
 				96D200782C154289001B4B56 /* SummerCamp.entitlements */,
 				968391962C166B580026AFAE /* Image+Extensions.swift */,
+				968391982C178DD70026AFAE /* PackItem.swift */,
 				96D200822C1660D2001B4B56 /* View+Extensions.swift */,
 			);
 			path = Utilities;
@@ -196,6 +199,7 @@
 				96D200692C14B59F001B4B56 /* ContentView.swift in Sources */,
 				96D200672C14B59F001B4B56 /* SummerCampApp.swift in Sources */,
 				96D200752C15414B001B4B56 /* CampStore.swift in Sources */,
+				968391992C178DD70026AFAE /* PackItem.swift in Sources */,
 				96D200812C1660BD001B4B56 /* ScheduleView.swift in Sources */,
 				96D200772C154192001B4B56 /* SDScheduleItem.swift in Sources */,
 				96D2007D2C164D10001B4B56 /* ActivityParser.swift in Sources */,
