@@ -13,4 +13,7 @@ public extension Image {
     static let goggles = Image(systemName: "eyeglasses")
     static let backpack = Image(systemName: "backpack")
     static let bag = Image(systemName: "bag")
+    static let waterBottle = Image(systemName: "waterbottle")
+    static let clothes = Image(systemName: "tshirt")
+    static let game = Image(systemName: "gamecontroller")
 }

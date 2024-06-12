@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96446F4D2C19E7E7006DE446 /* LabelStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96446F4C2C19E7E7006DE446 /* LabelStyles.swift */; };
+		96446F4F2C19E7F5006DE446 /* Alignments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96446F4E2C19E7F5006DE446 /* Alignments.swift */; };
+		96446F512C19EE54006DE446 /* Kid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96446F502C19EE54006DE446 /* Kid.swift */; };
+		96446F532C19F5BD006DE446 /* FakeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96446F522C19F5BD006DE446 /* FakeListView.swift */; };
 		968391972C166B580026AFAE /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968391962C166B580026AFAE /* Image+Extensions.swift */; };
 		968391992C178DD70026AFAE /* PackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968391982C178DD70026AFAE /* PackItem.swift */; };
 		96D200672C14B59F001B4B56 /* SummerCampApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D200662C14B59F001B4B56 /* SummerCampApp.swift */; };
@@ -23,6 +27,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		96446F4C2C19E7E7006DE446 /* LabelStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelStyles.swift; sourceTree = "<group>"; };
+		96446F4E2C19E7F5006DE446 /* Alignments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alignments.swift; sourceTree = "<group>"; };
+		96446F502C19EE54006DE446 /* Kid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kid.swift; sourceTree = "<group>"; };
+		96446F522C19F5BD006DE446 /* FakeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeListView.swift; sourceTree = "<group>"; };
 		968391962C166B580026AFAE /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
 		968391982C178DD70026AFAE /* PackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackItem.swift; sourceTree = "<group>"; };
 		96D200632C14B59F001B4B56 /* SummerCamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SummerCamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,7 +114,11 @@
 				96D200782C154289001B4B56 /* SummerCamp.entitlements */,
 				968391962C166B580026AFAE /* Image+Extensions.swift */,
 				968391982C178DD70026AFAE /* PackItem.swift */,
+				96446F522C19F5BD006DE446 /* FakeListView.swift */,
+				96446F502C19EE54006DE446 /* Kid.swift */,
 				96D200822C1660D2001B4B56 /* View+Extensions.swift */,
+				96446F4C2C19E7E7006DE446 /* LabelStyles.swift */,
+				96446F4E2C19E7F5006DE446 /* Alignments.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -192,14 +204,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96446F4F2C19E7F5006DE446 /* Alignments.swift in Sources */,
 				96D2007F2C1660A0001B4B56 /* DayView.swift in Sources */,
+				96446F512C19EE54006DE446 /* Kid.swift in Sources */,
 				968391972C166B580026AFAE /* Image+Extensions.swift in Sources */,
 				96D200832C1660D2001B4B56 /* View+Extensions.swift in Sources */,
 				96D2007B2C15495C001B4B56 /* SDActivity.swift in Sources */,
+				96446F4D2C19E7E7006DE446 /* LabelStyles.swift in Sources */,
 				96D200692C14B59F001B4B56 /* ContentView.swift in Sources */,
 				96D200672C14B59F001B4B56 /* SummerCampApp.swift in Sources */,
 				96D200752C15414B001B4B56 /* CampStore.swift in Sources */,
 				968391992C178DD70026AFAE /* PackItem.swift in Sources */,
+				96446F532C19F5BD006DE446 /* FakeListView.swift in Sources */,
 				96D200812C1660BD001B4B56 /* ScheduleView.swift in Sources */,
 				96D200772C154192001B4B56 /* SDScheduleItem.swift in Sources */,
 				96D2007D2C164D10001B4B56 /* ActivityParser.swift in Sources */,

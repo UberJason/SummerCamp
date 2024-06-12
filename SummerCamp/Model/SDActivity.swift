@@ -38,7 +38,7 @@ enum ActivityType: Hashable, Codable {
     }
 }
 
-struct Activity: Codable {
+struct Activity: Identifiable, Codable {
     public var activityType: ActivityType
     public var activityDescription: String?
     
