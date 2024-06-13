@@ -27,20 +27,3 @@ struct ScheduleItem: Hashable, Codable {
     public var date: Date
     public var activities: [Activity]
 }
-
-let json = """
-[
-    {
-        "date" : "2024-06-17",
-        "activities" : [
-            {
-                "activityType" : {
-                    "pool" : {}
-                },
-                "activityDescription" : ""Hunters Woods Pool"
-            }
-        ]
-    }
-
-]
-"""

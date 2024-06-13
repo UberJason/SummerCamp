@@ -10,6 +10,7 @@ import SwiftUI
 @Observable
 class ViewModel {
     let kids: [Kid]
+    var date: Date = Date.truncatedToday
     
     init() {
         let parser = ActivitiesParser()
@@ -62,16 +63,25 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-            DayView(date: Date(year: 2024, month: 6, day: 19))
+            DayView(date: viewModel.date)
                 .environment(viewModel)
                 .tabItem {
                     Label("Today", systemImage: "\(Date().formatted(.dateTime.day())).square")
                 }
+                .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
+                    viewModel.date = Date.truncatedToday
+                }
             
-            ScheduleView()
+            ScheduleView(kid: viewModel.kids.filter { $0.name == "Ming Ming" }.first!, title: "Ming Ming")
                 .environment(viewModel)
                 .tabItem {
-                    Label("Schedule", systemImage: "calendar")
+                    Label("Camp Schedule", systemImage: "calendar")
+                }
+            
+            ScheduleView(kid: viewModel.kids.filter { $0.name == "Mei Mei" }.first!, title: "Mei Mei")
+                .environment(viewModel)
+                .tabItem {
+                    Label("Preschool Schedule", systemImage: "calendar")
                 }
         }
     }
