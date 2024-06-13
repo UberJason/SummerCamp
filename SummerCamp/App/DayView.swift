@@ -4,44 +4,21 @@ struct DayView: View {
     @ScaledMetric var width = 20.0
     @ScaledMetric var spacing = 6.0
     
-    let kids = [
-        Kid(
-            name: "Ming Ming",
-            scheduleItems: [
-                ScheduleItem(
-                    date: Date(),
-                    activities: [
-                        Activity(activityType: .pool, activityDescription: "Hunters Woods Pool"),
-                        Activity(activityType: .fullDayFieldTrip, activityDescription: "Ninja Beam Challenge"),
-                    ]
-                )
-            ]
-        ),
-        Kid(
-            name: "Mei Mei",
-            scheduleItems: [
-                ScheduleItem(
-                    date: Date(),
-                    activities: [
-                        Activity(activityType: .other(title: "RCC Day"))
-                    ]
-                )
-            ]
-        )
-    ]
+    @Environment(ViewModel.self) var viewModel
+    let date: Date
     
     var body: some View {
         NavigationStack {
             List {
                 Section {
-                    ForEach(kids, id: \.name) { kid in
+                    ForEach(viewModel.kids, id: \.name) { kid in
                         VStack(alignment: .leading, spacing: 6.0) {
                             Text(kid.name)
                                 .font(.headline)
                                 .padding(.bottom, 8)
                             
                             VStack(alignment: .titleLeading, spacing: spacing) {
-                                ForEach(kid.scheduleItems.first!.packItems) { item in
+                                ForEach(viewModel.packItems(for: kid, on: date)) { item in
                                     PackItemCell(item: item)
                                 }
                             }
@@ -54,7 +31,7 @@ struct DayView: View {
                 
                 Section {
                     VStack(alignment: .leading) {
-                        FakeListView(items: kids) { kid in
+                        FakeListView(items: viewModel.kids) { kid in
                             Text(kid.name).font(.headline)
                             Divider().offset(y: -2)
                             ForEach(kid.scheduleItems.first!.activities) { activity in
@@ -70,13 +47,13 @@ struct DayView: View {
                         .sectionHeaderStyle()
                 }
             }
-            .navigationTitle("\(Date().formatted(.dateTime.day().month(.wide).weekday(.wide)))")
+            .navigationTitle("\(date.formatted(.dateTime.day().month(.wide).weekday(.wide)))")
         }
     }
 }
 
 #Preview {
-    DayView()
+    DayView(date: Date.truncatedToday)
 }
 
 struct PackItemCell: View {

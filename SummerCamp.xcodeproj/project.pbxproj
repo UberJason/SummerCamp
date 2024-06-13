@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96281FAD2C1B3FE000537A1A /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96281FAC2C1B3FE000537A1A /* ActivityCell.swift */; };
+		96281FAF2C1B7DEF00537A1A /* Date+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96281FAE2C1B7DEF00537A1A /* Date+Operations.swift */; };
 		96446F4D2C19E7E7006DE446 /* LabelStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96446F4C2C19E7E7006DE446 /* LabelStyles.swift */; };
 		96446F4F2C19E7F5006DE446 /* Alignments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96446F4E2C19E7F5006DE446 /* Alignments.swift */; };
 		96446F512C19EE54006DE446 /* Kid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96446F502C19EE54006DE446 /* Kid.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		96281FAC2C1B3FE000537A1A /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
+		96281FAE2C1B7DEF00537A1A /* Date+Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Operations.swift"; sourceTree = "<group>"; };
 		96446F4C2C19E7E7006DE446 /* LabelStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelStyles.swift; sourceTree = "<group>"; };
 		96446F4E2C19E7F5006DE446 /* Alignments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alignments.swift; sourceTree = "<group>"; };
 		96446F502C19EE54006DE446 /* Kid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kid.swift; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 				96D200822C1660D2001B4B56 /* View+Extensions.swift */,
 				96446F4C2C19E7E7006DE446 /* LabelStyles.swift */,
 				96446F4E2C19E7F5006DE446 /* Alignments.swift */,
+				96281FAE2C1B7DEF00537A1A /* Date+Operations.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 				96D200682C14B59F001B4B56 /* ContentView.swift */,
 				96D2007E2C1660A0001B4B56 /* DayView.swift */,
 				96D200802C1660BD001B4B56 /* ScheduleView.swift */,
+				96281FAC2C1B3FE000537A1A /* ActivityCell.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -213,7 +219,9 @@
 				96446F4D2C19E7E7006DE446 /* LabelStyles.swift in Sources */,
 				96D200692C14B59F001B4B56 /* ContentView.swift in Sources */,
 				96D200672C14B59F001B4B56 /* SummerCampApp.swift in Sources */,
+				96281FAF2C1B7DEF00537A1A /* Date+Operations.swift in Sources */,
 				96D200752C15414B001B4B56 /* CampStore.swift in Sources */,
+				96281FAD2C1B3FE000537A1A /* ActivityCell.swift in Sources */,
 				968391992C178DD70026AFAE /* PackItem.swift in Sources */,
 				96446F532C19F5BD006DE446 /* FakeListView.swift in Sources */,
 				96D200812C1660BD001B4B56 /* ScheduleView.swift in Sources */,
