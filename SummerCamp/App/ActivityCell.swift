@@ -41,6 +41,14 @@ extension ActivityType {
             return .green
         case .closed:
             return .red
+        case .rccDay:
+            return .orange
+        case .walkingFieldTrip:
+            return .cyan
+        case .wingDay:
+            return .indigo
+        case .waterPlay:
+            return .blue
         }
     }
     
@@ -60,6 +68,14 @@ extension ActivityType {
             return .otherActivity
         case .closed:
             return .closed
+        case .rccDay:
+            return .rcc
+        case .walkingFieldTrip:
+            return .walk
+        case .wingDay:
+            return .turtle
+        case .waterPlay:
+            return .waterPlay
         }
     }
 }

@@ -16,4 +16,9 @@ public extension Image {
     static let waterBottle = Image(systemName: "waterbottle")
     static let clothes = Image(systemName: "tshirt")
     static let game = Image(systemName: "gamecontroller")
+    
+    static let rcc = Image(systemName: "building.columns")
+    static let walk = Image(systemName: "figure.walk")
+    static let turtle = Image(systemName: "tortoise")
+    static let waterPlay = Image(systemName: "sprinkler.and.droplets")
 }

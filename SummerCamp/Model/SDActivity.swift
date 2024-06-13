@@ -15,6 +15,7 @@ class SDActivity {
 
 enum ActivityType: Hashable, Codable {
     case pool, steam, team, partDayFieldTrip, fullDayFieldTrip, film, other(title: String), closed
+    case rccDay, walkingFieldTrip, wingDay, waterPlay
     
     var title: String {
         switch self {
@@ -34,11 +35,20 @@ enum ActivityType: Hashable, Codable {
             title
         case .closed:
             "RCC CLOSED"
+            
+        case .rccDay:
+            "RCC Day"
+        case .walkingFieldTrip:
+            "Walking Field Trip"
+        case .wingDay:
+            "Wing Day"
+        case .waterPlay:
+            "Water Play"
         }
     }
 }
 
-struct Activity: Identifiable, Codable {
+struct Activity: Hashable, Identifiable, Codable {
     public var activityType: ActivityType
     public var activityDescription: String?
     

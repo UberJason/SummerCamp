@@ -1,10 +1,13 @@
 import Foundation
 
 class ActivitiesParser {
-    func parse(from string: String) -> [ScheduleItem] {
+    let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "M-d-yy"
-        
+        return dateFormatter
+    }()
+    
+    func parseSummerCamp(from string: String) -> [ScheduleItem] {
         let lines = string.components(separatedBy: "\n")
         
         var activityGroups: [[String]] = []
@@ -25,6 +28,56 @@ class ActivitiesParser {
                 date: dateFormatter.date(from: group.first!)!,
                 activities: group[1...].compactMap { Activity(textFileString: $0) }
             )
+        }
+        
+        return items
+    }
+    
+    func parsePreschool(from string: String) -> [ScheduleItem] {
+        let lines = string.components(separatedBy: "\n")
+        let startDateString = lines[0].components(separatedBy: ":").map({ $0.trimmingCharacters(in: .whitespaces) })[1]
+        let endDateString = lines[1].components(separatedBy: ":").map({ $0.trimmingCharacters(in: .whitespaces) })[1]
+        
+        let (startDate, endDate) = (dateFormatter.date(from: startDateString)!, dateFormatter.date(from: endDateString)!)
+
+        let activityMap = lines[2...6].map { line in
+            let items = line.components(separatedBy: ":").map({ $0.trimmingCharacters(in: .whitespaces) })
+            return (items[0], items[1])
+        }
+        .reduce(into: [String : ActivityType]()) { partialResult, pair in
+            partialResult[pair.0] = ActivityType(string: pair.1)
+        }
+        
+        let closedScheduleItems = lines[7...].compactMap { (line: String) -> ScheduleItem? in
+                let components = line.components(separatedBy: ":").map({ $0.trimmingCharacters(in: .whitespaces) })
+                
+                guard let activity = Activity(textFileString: components[1]) else { return nil }
+                return ScheduleItem(
+                    date: dateFormatter.date(from: components[0])!,
+                    activities: [activity]
+                )
+            }
+            .reduce(into: [Date : ScheduleItem]()) { partialResult, scheduleItem in
+                partialResult[scheduleItem.date] = scheduleItem
+            }
+        
+        var date = startDate, items = [ScheduleItem]()
+        
+        while date != endDate.adding(1, .day) {
+            let weekday = Calendar.current.weekdaySymbols[Calendar.current.component(.weekday, from: date) - 1]
+        
+            if let item = closedScheduleItems[date] {
+                items.append(item)
+            } else if let activityType = activityMap[weekday] {
+                let item = ScheduleItem(
+                    date: date,
+                    activities: [Activity(activityType: activityType)]
+                )
+                items.append(item)
+
+            }
+            
+            date = date.adding(1, .day)
         }
         
         return items
@@ -53,6 +106,10 @@ extension ActivityType {
         else if string == "fullDayFieldTrip" { self = .fullDayFieldTrip }
         else if string == "closed" { self = .closed }
         else if string == "film" { self = .film }
+        else if string == "RCC Day" { self = .rccDay }
+        else if string == "Walking Field Trip" { self = .walkingFieldTrip }
+        else if string == "Wing Day" { self = .wingDay }
+        else if string == "Water Play" { self = .waterPlay }
         else if string.starts(with: "other") {
             self = .other(title: String(string.components(separatedBy: "(")[1].dropLast()))
         } else {
@@ -61,7 +118,20 @@ extension ActivityType {
     }
 }
 
-let activities = """
+let preschoolSchedule = """
+startDate: 6/17/24
+endDate: 8/2/24
+Monday: RCC Day
+Tuesday: Walking Field Trip
+Wednesday: RCC Day
+Thursday: Wing Day
+Friday: Water Play
+6/19/24: closed; Juneteenth
+7/4/24: closed; 4th of July
+7/5/24: closed; 4th of July
+"""
+
+let summerCampActivities = """
 6/17/24
 pool; Hunters Woods Pool
 team; Ninja Beam Challenge

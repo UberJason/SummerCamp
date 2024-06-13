@@ -24,6 +24,8 @@ struct PackItem: Hashable, Identifiable {
 extension ActivityType {
     var packItems: [PackItem] {
         switch self {
+        case .closed:
+            return []
         case .pool:
             return [.towel, .backpack, .waterShoes, .goggles, .waterBottle, .spareClothes]
         case .fullDayFieldTrip:

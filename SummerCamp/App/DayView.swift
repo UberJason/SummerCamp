@@ -10,23 +10,25 @@ struct DayView: View {
     var body: some View {
         NavigationStack {
             List {
-                Section {
-                    ForEach(viewModel.kids, id: \.name) { kid in
-                        VStack(alignment: .leading, spacing: 6.0) {
-                            Text(kid.name)
-                                .font(.headline)
-                                .padding(.bottom, 8)
-                            
-                            VStack(alignment: .titleLeading, spacing: spacing) {
-                                ForEach(viewModel.packItems(for: kid, on: date)) { item in
-                                    PackItemCell(item: item)
+                if !viewModel.isClosed(on: date) {
+                    Section {
+                        ForEach(viewModel.kids, id: \.name) { kid in
+                            VStack(alignment: .leading, spacing: 6.0) {
+                                Text(kid.name)
+                                    .font(.headline)
+                                    .padding(.bottom, 8)
+                                
+                                VStack(alignment: .titleLeading, spacing: spacing) {
+                                    ForEach(viewModel.packItems(for: kid, on: date)) { item in
+                                        PackItemCell(item: item)
+                                    }
                                 }
                             }
                         }
+                    } header: {
+                        Text("Pack List")
+                            .sectionHeaderStyle()
                     }
-                } header: {
-                    Text("Pack List")
-                        .sectionHeaderStyle()
                 }
                 
                 Section {
@@ -34,7 +36,7 @@ struct DayView: View {
                         FakeListView(items: viewModel.kids) { kid in
                             Text(kid.name).font(.headline)
                             Divider().offset(y: -2)
-                            ForEach(kid.scheduleItems.first!.activities) { activity in
+                            ForEach(viewModel.activities(for: kid, on: date)) { activity in
                                 ActivityCell(activity: activity)
                             }
                         } divider: {

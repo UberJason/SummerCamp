@@ -23,7 +23,7 @@ class SDScheduleItem {
     }
 }
 
-struct ScheduleItem: Codable {
+struct ScheduleItem: Hashable, Codable {
     public var date: Date
     public var activities: [Activity]
 }
