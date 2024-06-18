@@ -60,7 +60,7 @@ struct DayView: View {
             .safeAreaPadding(.bottom, 50)
             .navigationTitle("\(viewModel.date.formatted(.dateTime.day().month(.wide).weekday(.wide)))")
             .overlay(alignment: .bottom) {
-                DateSelectionControl(date: $viewModel.date)
+                DateSelectionControl(date: $viewModel.date, allDates: viewModel.allDates)
             }
         }
     }

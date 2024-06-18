@@ -57,6 +57,10 @@ class ViewModel {
             .flatMap(\.activities)
         ?? []
     }
+    
+    var allDates: [Date] {
+        kids.flatMap(\.scheduleItems).map(\.date).removingDuplicates().sorted(by: <)
+    }
 }
 
 struct ContentView: View {
