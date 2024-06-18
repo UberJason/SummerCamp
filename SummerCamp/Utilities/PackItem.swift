@@ -11,10 +11,11 @@ struct PackItem: Hashable, Identifiable {
         hasher.combine(name)
     }
     
-    static let backpack = PackItem(name: "Backpack", icon:. backpack, sortValue: 1)
-    static let waterBottle = PackItem(name: "Water bottle", icon: .waterBottle, sortValue: 2)
-    static let spareClothes = PackItem(name: "Change of clothes", icon: .clothes, sortValue: 3)
-    static let swimClothes = PackItem(name: "Swim clothes", icon: .pool, sortValue: 4)
+    static let campShirt = PackItem(name: "Blue Camp Shirt", icon: .clothes, sortValue: 0)
+    static let swimClothes = PackItem(name: "Swim clothes", icon: .pool, sortValue: 1)
+    static let backpack = PackItem(name: "Backpack", icon:. backpack, sortValue: 2)
+    static let waterBottle = PackItem(name: "Water bottle", icon: .waterBottle, sortValue: 3)
+    static let spareClothes = PackItem(name: "Change of clothes", icon: .clothes, sortValue: 4)
     static let towel = PackItem(name: "Towel", icon: .towel, sortValue: 5)
     static let waterShoes = PackItem(name: "Water shoes", icon: .shoes, sortValue: 6)
     static let goggles = PackItem(name: "Goggles", icon: .goggles, sortValue: 7)
@@ -28,9 +29,11 @@ extension ActivityType {
         case .closed:
             return []
         case .pool:
-            return [.backpack, .waterBottle, .spareClothes, .towel, .waterShoes, .goggles]
+            return [.swimClothes, .backpack, .waterBottle, .spareClothes, .towel, .waterShoes, .goggles]
         case .fullDayFieldTrip:
             return [.backpack, .waterBottle, .spareClothes, .switch]
+        case .waterPlay:
+            return [.towel, .spareClothes, .waterShoes, .swimClothes]
         default:
             return [.backpack, .waterBottle, .spareClothes]
         }
@@ -43,7 +46,6 @@ extension ScheduleItem {
             .map(\.activityType)
             .flatMap(\.packItems)
             .removingDuplicates()
-            .sorted { $0.sortValue < $1.sortValue }
     }
 }
 

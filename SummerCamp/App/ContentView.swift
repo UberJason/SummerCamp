@@ -39,13 +39,21 @@ class ViewModel {
     }
     
     func packItems(for kid: Kid, on date: Date) -> [PackItem] {
-        kids
+        var items = kids
             .filter { $0.name == kid.name }
             .first?
             .scheduleItems
             .filter { $0.date == date }
             .flatMap(\.packItems)
-        ?? []
+        
+        
+        let weekday = Calendar.current.weekdaySymbols[Calendar.current.component(.weekday, from: date) - 1]
+        
+        if weekday == "Monday" && kid.name == "Mei Mei" {
+            items?.append(.campShirt)
+        }
+            
+        return items?.sorted { $0.sortValue < $1.sortValue } ?? []
     }
     
     func activities(for kid: Kid, on date: Date) -> [Activity] {
