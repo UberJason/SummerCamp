@@ -5,20 +5,21 @@ struct PackItem: Hashable, Identifiable {
     
     let name: String
     let icon: Image
+    let sortValue: Int
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(name)
     }
     
-    static let swimClothes = PackItem(name: "Swim clothes", icon: .pool)
-    static let towel = PackItem(name: "Towel", icon: .towel)
-    static let waterShoes = PackItem(name: "Water shoes", icon: .shoes)
-    static let goggles = PackItem(name: "Goggles", icon: .goggles)
-    static let backpack = PackItem(name: "Backpack", icon:. backpack)
-    static let bag = PackItem(name: "Bag", icon: .bag)
-    static let waterBottle = PackItem(name: "Water bottle", icon: .waterBottle)
-    static let spareClothes = PackItem(name: "Change of clothes", icon: .clothes)
-    static let `switch` = PackItem(name: "Nintendo Switch", icon: .game)
+    static let backpack = PackItem(name: "Backpack", icon:. backpack, sortValue: 1)
+    static let waterBottle = PackItem(name: "Water bottle", icon: .waterBottle, sortValue: 2)
+    static let spareClothes = PackItem(name: "Change of clothes", icon: .clothes, sortValue: 3)
+    static let swimClothes = PackItem(name: "Swim clothes", icon: .pool, sortValue: 4)
+    static let towel = PackItem(name: "Towel", icon: .towel, sortValue: 5)
+    static let waterShoes = PackItem(name: "Water shoes", icon: .shoes, sortValue: 6)
+    static let goggles = PackItem(name: "Goggles", icon: .goggles, sortValue: 7)
+    static let bag = PackItem(name: "Bag", icon: .bag, sortValue: 8)
+    static let `switch` = PackItem(name: "Nintendo Switch", icon: .game, sortValue: 9)
 }
 
 extension ActivityType {
@@ -27,7 +28,7 @@ extension ActivityType {
         case .closed:
             return []
         case .pool:
-            return [.towel, .backpack, .waterShoes, .goggles, .waterBottle, .spareClothes]
+            return [.backpack, .waterBottle, .spareClothes, .towel, .waterShoes, .goggles]
         case .fullDayFieldTrip:
             return [.backpack, .waterBottle, .spareClothes, .switch]
         default:
@@ -42,7 +43,7 @@ extension ScheduleItem {
             .map(\.activityType)
             .flatMap(\.packItems)
             .removingDuplicates()
-            .sorted { $0.name < $1.name }
+            .sorted { $0.sortValue < $1.sortValue }
     }
 }
 

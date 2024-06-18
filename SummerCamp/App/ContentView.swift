@@ -64,13 +64,15 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-            DayView(date: viewModel.date)
+            DayView()
                 .environment(viewModel)
                 .tabItem {
                     Label("Today", systemImage: "\(Date().formatted(.dateTime.day())).square")
                 }
                 .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
-                    viewModel.date = Date.truncatedToday
+                    withAnimation {
+                        viewModel.date = Date.truncatedToday
+                    }
                 }
             
             ScheduleView(kid: viewModel.kids.filter { $0.name == "Ming Ming" }.first!, title: "Ming Ming")

@@ -21,4 +21,7 @@ public extension Image {
     static let walk = Image(systemName: "figure.walk")
     static let turtle = Image(systemName: "tortoise")
     static let waterPlay = Image(systemName: "sprinkler.and.droplets")
+    
+    static let chevronLeft = Image(systemName: "chevron.left")
+    static let chevronRight = Image(systemName: "chevron.right")
 }
