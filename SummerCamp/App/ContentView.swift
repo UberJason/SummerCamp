@@ -31,6 +31,7 @@ class ViewModel {
         Set(
             kids
                 .flatMap(\.scheduleItems)
+                .filter { $0.date == date }
                 .flatMap(\.activities)
                 .map(\.activityType)
         )
